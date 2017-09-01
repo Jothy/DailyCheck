@@ -1,0 +1,1077 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>838</width>
+    <height>469</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_3">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="CurrentBeamTab">
+         <attribute name="title">
+          <string>CurrentBeam</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_14">
+          <item row="0" column="0">
+           <layout class="QGridLayout" name="gridLayout_13">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <item>
+               <widget class="QGroupBox" name="groupBox">
+                <property name="title">
+                 <string>Energy</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_2">
+                 <item row="0" column="0">
+                  <layout class="QVBoxLayout" name="verticalLayout">
+                   <item>
+                    <widget class="QLabel" name="labelOutput">
+                     <property name="font">
+                      <font>
+                       <family>Calibri</family>
+                       <pointsize>10</pointsize>
+                       <stylestrategy>PreferAntialias</stylestrategy>
+                      </font>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::WinPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                     <property name="text">
+                      <string>Output</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="labelFlatX">
+                     <property name="font">
+                      <font>
+                       <family>Calibri</family>
+                       <pointsize>10</pointsize>
+                       <stylestrategy>PreferAntialias</stylestrategy>
+                      </font>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::WinPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                     <property name="text">
+                      <string>FlatX</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="labelFlatY">
+                     <property name="font">
+                      <font>
+                       <family>Calibri</family>
+                       <pointsize>10</pointsize>
+                       <stylestrategy>PreferAntialias</stylestrategy>
+                      </font>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::WinPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                     <property name="text">
+                      <string>FlatY</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="labelSymX">
+                     <property name="font">
+                      <font>
+                       <family>Calibri</family>
+                       <pointsize>10</pointsize>
+                       <stylestrategy>PreferAntialias</stylestrategy>
+                      </font>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::WinPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                     <property name="text">
+                      <string>SymX</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="labelSymY">
+                     <property name="font">
+                      <font>
+                       <family>Calibri</family>
+                       <pointsize>10</pointsize>
+                       <stylestrategy>PreferAntialias</stylestrategy>
+                      </font>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::WinPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                     <property name="text">
+                      <string>SymY</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_6">
+                <item>
+                 <widget class="QPushButton" name="pushButtonStart">
+                  <property name="text">
+                   <string>Start</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="Resource_file.qrc">
+                    <normaloff>:/newPrefix/icons/Start.png</normaloff>:/newPrefix/icons/Start.png</iconset>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButtonStop">
+                  <property name="text">
+                   <string>Stop</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="Resource_file.qrc">
+                    <normaloff>:/newPrefix/icons/stop 2.png</normaloff>:/newPrefix/icons/stop 2.png</iconset>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkBoxBatchAnalyse">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="text">
+                   <string>Batch Analyse</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="Resource_file.qrc">
+                    <normaloff>:/newPrefix/icons/basket.png</normaloff>:/newPrefix/icons/basket.png</iconset>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="1">
+             <widget class="QGroupBox" name="groupBox_2">
+              <property name="title">
+               <string>Calander</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_10">
+               <item row="0" column="0">
+                <layout class="QVBoxLayout" name="verticalLayout_4">
+                 <item>
+                  <widget class="QCalendarWidget" name="calendarWidget"/>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_6">
+                   <item>
+                    <widget class="QLabel" name="label_3">
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(85, 170, 0);</string>
+                     </property>
+                     <property name="text">
+                      <string>Action level(&lt;2%)</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_4">
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(255, 255, 0);</string>
+                     </property>
+                     <property name="text">
+                      <string>&gt;Action level(&lt;3%)</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_5">
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(255, 0, 0);</string>
+                     </property>
+                     <property name="text">
+                      <string>&gt;Tolerance level(&gt;3%)</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QGroupBox" name="groupBox_3">
+              <property name="title">
+               <string>Setup</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_4">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_9">
+                 <property name="font">
+                  <font>
+                   <weight>50</weight>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Field Size:20 x 20(6X &amp;amp; 18X), 15 x 15 (6XSRS)&lt;/p&gt;&lt;p&gt;Detector Position: 0,0,0 (Lat, Long, vrt)&lt;/p&gt;&lt;p&gt;MU: 200&lt;/p&gt;&lt;p&gt;Dose Rate: 600 MU/min (6X &amp;amp; 18X), 100 MU/min (6XSRS)&lt;/p&gt;&lt;p&gt;EPID Mode:Integrated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_10">
+                 <property name="styleSheet">
+                  <string notr="true">background-image: url(:/newPrefix/icons/EPID.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="AllBeamsTab">
+         <attribute name="title">
+          <string>AllBeams</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QTableWidget" name="tableWidget">
+            <property name="editTriggers">
+             <set>QAbstractItemView::NoEditTriggers</set>
+            </property>
+            <property name="defaultDropAction">
+             <enum>Qt::IgnoreAction</enum>
+            </property>
+            <property name="alternatingRowColors">
+             <bool>true</bool>
+            </property>
+            <property name="gridStyle">
+             <enum>Qt::SolidLine</enum>
+            </property>
+            <column>
+             <property name="text">
+              <string>Energy</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Output (%)</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>FlatX (%)</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>FlatY (%)</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>SymX (%)</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>SymY (%)</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>MPV</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Date</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Time</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab">
+         <attribute name="title">
+          <string>Settings</string>
+         </attribute>
+         <widget class="QSplitter" name="splitter">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>10</y>
+            <width>329</width>
+            <height>364</height>
+           </rect>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <widget class="QGroupBox" name="groupBoxSettings">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="autoFillBackground">
+            <bool>true</bool>
+           </property>
+           <property name="title">
+            <string>Output Calibration</string>
+           </property>
+           <property name="checkable">
+            <bool>false</bool>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_8">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_3">
+              <item>
+               <widget class="QGroupBox" name="groupBox6X">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="title">
+                 <string>6X</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_9">
+                 <item row="0" column="0">
+                  <layout class="QHBoxLayout" name="horizontalLayout_3">
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout">
+                     <item>
+                      <widget class="QLabel" name="label">
+                       <property name="text">
+                        <string>Slope</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QDoubleSpinBox" name="doubleSpinBoxSlope6X">
+                       <property name="enabled">
+                        <bool>false</bool>
+                       </property>
+                       <property name="decimals">
+                        <number>4</number>
+                       </property>
+                       <property name="minimum">
+                        <double>-20000.000000000000000</double>
+                       </property>
+                       <property name="maximum">
+                        <double>20000.000000000000000</double>
+                       </property>
+                       <property name="singleStep">
+                        <double>5.000000000000000</double>
+                       </property>
+                       <property name="value">
+                        <double>10638.000000000000000</double>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_2">
+                     <item>
+                      <widget class="QLabel" name="label_2">
+                       <property name="text">
+                        <string>Intercept</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QDoubleSpinBox" name="doubleSpinBoxIntercept6X">
+                       <property name="enabled">
+                        <bool>false</bool>
+                       </property>
+                       <property name="decimals">
+                        <number>4</number>
+                       </property>
+                       <property name="minimum">
+                        <double>-10.000000000000000</double>
+                       </property>
+                       <property name="maximum">
+                        <double>10.000000000000000</double>
+                       </property>
+                       <property name="singleStep">
+                        <double>0.500000000000000</double>
+                       </property>
+                       <property name="value">
+                        <double>-7.391900000000000</double>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="groupBox18X">
+                <property name="title">
+                 <string>18X</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_7">
+                 <item row="0" column="0">
+                  <layout class="QHBoxLayout" name="horizontalLayout_7">
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_8">
+                     <item>
+                      <widget class="QLabel" name="label_6">
+                       <property name="text">
+                        <string>Slope</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QDoubleSpinBox" name="doubleSpinBoxSlope18X">
+                       <property name="enabled">
+                        <bool>false</bool>
+                       </property>
+                       <property name="decimals">
+                        <number>4</number>
+                       </property>
+                       <property name="minimum">
+                        <double>-20000.000000000000000</double>
+                       </property>
+                       <property name="maximum">
+                        <double>20000.000000000000000</double>
+                       </property>
+                       <property name="singleStep">
+                        <double>5.000000000000000</double>
+                       </property>
+                       <property name="value">
+                        <double>12090.000000000000000</double>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_9">
+                     <item>
+                      <widget class="QLabel" name="label_7">
+                       <property name="text">
+                        <string>Intercept</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QDoubleSpinBox" name="doubleSpinBoxIntercept18X">
+                       <property name="enabled">
+                        <bool>false</bool>
+                       </property>
+                       <property name="decimals">
+                        <number>4</number>
+                       </property>
+                       <property name="minimum">
+                        <double>-10.000000000000000</double>
+                       </property>
+                       <property name="maximum">
+                        <double>10.000000000000000</double>
+                       </property>
+                       <property name="singleStep">
+                        <double>0.500000000000000</double>
+                       </property>
+                       <property name="value">
+                        <double>-1.384200000000000</double>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="groupBox6X_3">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="title">
+                 <string>6XSRS</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_18">
+                 <item row="0" column="0">
+                  <layout class="QHBoxLayout" name="horizontalLayout_16">
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_17">
+                     <item>
+                      <widget class="QLabel" name="label_14">
+                       <property name="text">
+                        <string>Slope</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QDoubleSpinBox" name="doubleSpinBoxSlope6XSRS">
+                       <property name="enabled">
+                        <bool>false</bool>
+                       </property>
+                       <property name="decimals">
+                        <number>4</number>
+                       </property>
+                       <property name="minimum">
+                        <double>-20000.000000000000000</double>
+                       </property>
+                       <property name="maximum">
+                        <double>20000.000000000000000</double>
+                       </property>
+                       <property name="singleStep">
+                        <double>5.000000000000000</double>
+                       </property>
+                       <property name="value">
+                        <double>10638.000000000000000</double>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_18">
+                     <item>
+                      <widget class="QLabel" name="label_15">
+                       <property name="text">
+                        <string>Intercept</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QDoubleSpinBox" name="doubleSpinBoxIntercept6XSRS">
+                       <property name="enabled">
+                        <bool>false</bool>
+                       </property>
+                       <property name="decimals">
+                        <number>4</number>
+                       </property>
+                       <property name="minimum">
+                        <double>-100.000000000000000</double>
+                       </property>
+                       <property name="maximum">
+                        <double>100.000000000000000</double>
+                       </property>
+                       <property name="singleStep">
+                        <double>0.500000000000000</double>
+                       </property>
+                       <property name="value">
+                        <double>-7.391900000000000</double>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="0">
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <item>
+               <widget class="QGroupBox" name="groupBox_4">
+                <property name="title">
+                 <string>Image Folder Path</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_6">
+                 <item row="0" column="0">
+                  <widget class="QLineEdit" name="lineEditImageFolder">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Path without 'LinacID\' at end&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>D:\DailyCheck\Data</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="groupBox_5">
+                <property name="title">
+                 <string>Linac</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_5">
+                 <item row="0" column="0">
+                  <widget class="QComboBox" name="comboBoxLA">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>LA1</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>LA2</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>LA3</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>LA4</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="2" column="0">
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item>
+               <widget class="QPushButton" name="pushButtonLogin">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Login</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="Resource_file.qrc">
+                  <normaloff>:/newPrefix/icons/arrow_up.png</normaloff>:/newPrefix/icons/arrow_up.png</iconset>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButtonLogout">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Logout</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="Resource_file.qrc">
+                  <normaloff>:/newPrefix/icons/arrow_down.png</normaloff>:/newPrefix/icons/arrow_down.png</iconset>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_6">
+          <property name="geometry">
+           <rect>
+            <x>350</x>
+            <y>20</y>
+            <width>261</width>
+            <height>141</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>Database</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_12">
+           <item row="0" column="0">
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <widget class="QGroupBox" name="labelDBPath">
+               <property name="title">
+                <string>DB File</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_11">
+                <item row="1" column="0">
+                 <widget class="QPushButton" name="pushButtonToXLS">
+                  <property name="text">
+                   <string>To XLS</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="Resource_file.qrc">
+                    <normaloff>:/newPrefix/icons/application_view_columns.png</normaloff>:/newPrefix/icons/application_view_columns.png</iconset>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLineEdit" name="lineEditDBFile">
+                  <property name="text">
+                   <string>D:\DailyCheck\DailyQA</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_4">
+         <attribute name="title">
+          <string>Calibration</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_16">
+          <item row="0" column="0">
+           <widget class="QSplitter" name="splitter_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <widget class="QWidget" name="layoutWidget_2">
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_10">
+                <item>
+                 <spacer name="horizontalSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButtonLoadImages">
+                  <property name="toolTip">
+                   <string>Energy automatically detected</string>
+                  </property>
+                  <property name="text">
+                   <string>Load Images (seperate set for each energy)</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="Resource_file.qrc">
+                    <normaloff>:/newPrefix/icons/open alt.png</normaloff>:/newPrefix/icons/open alt.png</iconset>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_2">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QTableWidget" name="tableWidget_2">
+                <attribute name="horizontalHeaderDefaultSectionSize">
+                 <number>100</number>
+                </attribute>
+                <attribute name="horizontalHeaderMinimumSectionSize">
+                 <number>20</number>
+                </attribute>
+                <attribute name="verticalHeaderDefaultSectionSize">
+                 <number>20</number>
+                </attribute>
+                <attribute name="verticalHeaderMinimumSectionSize">
+                 <number>15</number>
+                </attribute>
+                <column>
+                 <property name="text">
+                  <string>No.</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>MU</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>MPV</string>
+                 </property>
+                </column>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_11">
+                <item>
+                 <spacer name="horizontalSpacer_3">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton">
+                  <property name="toolTip">
+                   <string>Energy automatically detected</string>
+                  </property>
+                  <property name="text">
+                   <string>Calibrate</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="Resource_file.qrc">
+                    <normaloff>:/newPrefix/icons/advanced.png</normaloff>:/newPrefix/icons/advanced.png</iconset>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_4">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QGroupBox" name="groupBox_7">
+             <property name="title">
+              <string>Fitting</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_15">
+              <item row="0" column="0">
+               <widget class="MatplotlibWidget" name="CalibrationPlot" native="true">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(179, 179, 179);</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_3">
+         <attribute name="title">
+          <string>Trend</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="tab_2">
+         <attribute name="title">
+          <string>About</string>
+         </attribute>
+         <widget class="QLabel" name="label_8">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>259</width>
+            <height>297</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Developed by:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Jothy Selvaraj&lt;/p&gt;&lt;p&gt;Jon Lee&lt;/p&gt;&lt;p&gt;Ben Cooper&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Medical Physics &amp;amp; Radiation Engineering&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;The Canberra Hospital&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Garran, 2605, ACT&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+          </property>
+         </widget>
+         <widget class="QFrame" name="frame">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>260</y>
+            <width>261</width>
+            <height>111</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">image: url(:/newPrefix/icons/ACT.png);</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_11">
+          <property name="geometry">
+           <rect>
+            <x>630</x>
+            <y>340</y>
+            <width>291</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string>Last Build:20/12/2016 -JKS</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_12">
+        <item>
+         <widget class="QLabel" name="labelBlinkText">
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#ff0000;&quot;&gt;Click &amp;quot;Start&amp;quot; after transfering images to NAS to analyse&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QDialogButtonBox" name="buttonBox">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="standardButtons">
+           <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+          </property>
+          <property name="centerButtons">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>838</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MatplotlibWidget</class>
+   <extends>QWidget</extends>
+   <header>matplotlibwidget</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="Resource_file.qrc"/>
+ </resources>
+ <connections/>
+</ui>
