@@ -15,7 +15,7 @@ import glob
 import datetime as dt
 
 
-class StartQT(QtWidgets.QDialog):
+class StartQT(QtWidgets.QMainWindow):
     def __init__(self, parent=None):
         QtWidgets.QWidget.__init__(self, parent)
         self.ui = Ui_MainWindow()
@@ -74,8 +74,6 @@ class StartQT(QtWidgets.QDialog):
         self.CurCalibIntercept=''
         self.CurCalibSlope=''
         self.CurCalibEnergy=''
-
-
 
         #self.navi_toolbar1 = NavigationToolbar(self.ui.CalibrationPlot,self)
         self.ui.pushButtonStart.clicked.connect(self.StartLoop)
@@ -558,7 +556,7 @@ class StartQT(QtWidgets.QDialog):
     def Calibrate(self):
         self.ui.CalibrationPlot.axes.clear()
         self.ui.tableWidget_2.setRowCount(0)
-        files =QtGui.QFileDialog(self)
+        files =QtWidgets.QFileDialog(self)
         files.setWindowTitle('Calibration files')
         CalibrationImages =files.getOpenFileNames(self, caption='Select calibration files')
         CalibrationImages=self.SortFiles(CalibrationImages)

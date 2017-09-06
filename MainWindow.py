@@ -502,12 +502,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_12.addWidget(self.buttonBox)
         self.verticalLayout_2.addLayout(self.horizontalLayout_12)
         self.gridLayout_3.addLayout(self.verticalLayout_2, 0, 0, 1, 1)
+        MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 838, 21))
         self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
-
+        MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
         self.tabWidget.setCurrentIndex(0)
