@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>838</width>
-    <height>469</height>
+    <width>951</width>
+    <height>492</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -458,10 +458,10 @@
                         <number>4</number>
                        </property>
                        <property name="minimum">
-                        <double>-10.000000000000000</double>
+                        <double>-1000000.000000000000000</double>
                        </property>
                        <property name="maximum">
-                        <double>10.000000000000000</double>
+                        <double>100000.000000000000000</double>
                        </property>
                        <property name="singleStep">
                         <double>0.500000000000000</double>
@@ -537,10 +537,10 @@
                         <number>4</number>
                        </property>
                        <property name="minimum">
-                        <double>-10.000000000000000</double>
+                        <double>-100000.000000000000000</double>
                        </property>
                        <property name="maximum">
-                        <double>10.000000000000000</double>
+                        <double>100000.000000000000000</double>
                        </property>
                        <property name="singleStep">
                         <double>0.500000000000000</double>
@@ -619,10 +619,10 @@
                         <number>4</number>
                        </property>
                        <property name="minimum">
-                        <double>-100.000000000000000</double>
+                        <double>-100000.000000000000000</double>
                        </property>
                        <property name="maximum">
-                        <double>100.000000000000000</double>
+                        <double>100000.000000000000000</double>
                        </property>
                        <property name="singleStep">
                         <double>0.500000000000000</double>
@@ -892,7 +892,7 @@
                  </spacer>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButton">
+                 <widget class="QPushButton" name="pushButtonCalibrate">
                   <property name="toolTip">
                    <string>Energy automatically detected</string>
                   </property>
@@ -1056,7 +1056,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>838</width>
+     <width>951</width>
      <height>21</height>
     </rect>
    </property>

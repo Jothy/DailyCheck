@@ -6,6 +6,7 @@ import time, datetime, os
 from MainWindow import Ui_MainWindow
 import ScriptDataFrame as DB
 import matplotlib.pyplot as plt
+from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT
 
 
 import numpy as np
@@ -74,8 +75,9 @@ class StartQT(QtWidgets.QMainWindow):
         self.CurCalibIntercept=''
         self.CurCalibSlope=''
         self.CurCalibEnergy=''
+        self.CalibrationImagesLst=[]
 
-        #self.navi_toolbar1 = NavigationToolbar(self.ui.CalibrationPlot,self)
+        #self.navi_toolbar1 = NavigationToolbar2QT(self.ui.CalibrationPlot,self)
         self.ui.pushButtonStart.clicked.connect(self.StartLoop)
         self.ui.pushButtonStop.clicked.connect(self.StopLoop)
         self.ui.pushButtonLogin.clicked.connect(self.Login)
@@ -83,10 +85,10 @@ class StartQT(QtWidgets.QMainWindow):
         self.ui.checkBoxBatchAnalyse.clicked.connect(self.ChangeMode)
         self.ui.tableWidget.cellChanged.connect(self.ColorCells)
         self.ui.pushButtonToXLS.clicked.connect(self.ConvertToXLS)
-        self.ui.pushButtonLoadImages.clicked.connect(self.Calibrate)
+        self.ui.pushButtonLoadImages.clicked.connect(self.LoadCalibImages)
         self.ui.lineEditImageFolder.textEdited.connect(self.ChooseFolder)
         self.ui.lineEditDBFile.textEdited.connect(self.ChooseDBFile)
-        self.ui.pushButton.clicked.connect(self.UpdateCalibration)
+        self.ui.pushButtonCalibrate.clicked.connect(self.Calibrate)
         self.ui.buttonBox.accepted.connect(self.PushResultsToDB)
         self.ui.buttonBox.rejected.connect(self.Exit)
 
@@ -259,7 +261,7 @@ class StartQT(QtWidgets.QMainWindow):
             self.ColorResults()
 
     def Login(self):
-        password=QtGui.QInputDialog.getText(self, "Enter Password", "Password:",QtGui.QLineEdit.Password)[0]
+        password=QtWidgets.QInputDialog.getText(self, "Enter Password", "Password:",QtWidgets.QLineEdit.Password)[0]
         #print(password,self.Password)
         if password==self.Password:
             self.ui.doubleSpinBoxSlope6X.setEnabled(True)
@@ -546,32 +548,44 @@ class StartQT(QtWidgets.QMainWindow):
 
     def GetMPV(self,fp):
         NumOfFrames = self.GetNumFrames(fp)
-        Img = dcm.read_file(fp)
+        #print(fp,NumOfFrames)
+        Img =dcm.read_file(fp)
         ImgData = Img._get_pixel_array()
         CentreY = ImgData.shape[0] / 2
         CentreX = ImgData.shape[1] / 2
-        MPV = NumOfFrames / np.mean(ImgData[CentreY - 10:CentreY + 10, CentreX - 10:CentreX + 10])
+        #print(CentreY-10,CentreY+10,CentreX-10,CentreX+10)
+        PixelValues=np.mean(ImgData[np.int(CentreY-10):np.int(CentreY+10),np.int(CentreX-10):np.int(CentreX+10)])
+        MPV = NumOfFrames/PixelValues
         return MPV
+
+    def LoadCalibImages(self):
+        self.ui.CalibrationPlot.axes.clear()
+        self.ui.tableWidget_2.setRowCount(0)
+        files = QtWidgets.QFileDialog(self)
+        files.setWindowTitle('Calibration files')
+        CalibrationImages = files.getOpenFileNames(self, caption='Select calibration files')
+        self.CalibrationImagesLst = self.SortFiles(CalibrationImages[0])
+        MULst = []
+        MPVLst = []
+        for x in range(0, np.size(self.CalibrationImagesLst), 1):
+            MU = self.GetDeliveredMU(self.CalibrationImagesLst[x])
+            MPV = self.GetMPV(self.CalibrationImagesLst[x])
+            MULst.append(MU)
+            MPVLst.append(MPV)
+        self.ui.tableWidget_2.setRowCount(np.size(self.CalibrationImagesLst))
+        for x in range(0, np.size(self.CalibrationImagesLst), 1):
+            self.ui.tableWidget_2.setItem(x, 0, QtWidgets.QTableWidgetItem(str(x + 1)))
+            self.ui.tableWidget_2.setItem(x, 1, QtWidgets.QTableWidgetItem(str(np.round(MULst[x], 1))))
+            self.ui.tableWidget_2.setItem(x, 2, QtWidgets.QTableWidgetItem(str(np.round(MPVLst[x], 6))))
 
     def Calibrate(self):
         self.ui.CalibrationPlot.axes.clear()
-        self.ui.tableWidget_2.setRowCount(0)
-        files =QtWidgets.QFileDialog(self)
-        files.setWindowTitle('Calibration files')
-        CalibrationImages =files.getOpenFileNames(self, caption='Select calibration files')
-        CalibrationImages=self.SortFiles(CalibrationImages)
-        MULst=[]
+        NumRows=self.ui.tableWidget_2.rowCount()
         MPVLst=[]
-        for x in range(0,np.size(CalibrationImages),1):
-            MU=self.GetDeliveredMU(CalibrationImages[x])
-            MPV=self.GetMPV(CalibrationImages[x])
-            MULst.append(MU)
-            MPVLst.append(MPV)
-        self.ui.tableWidget_2.setRowCount(np.size(CalibrationImages))
-        for x in range(0,np.size(CalibrationImages),1):
-            self.ui.tableWidget_2.setItem(x,0,QtGui.QTableWidgetItem(str(x+1)))
-            self.ui.tableWidget_2.setItem(x,1,QtGui.QTableWidgetItem(str(np.round(MULst[x],1))))
-            self.ui.tableWidget_2.setItem(x,2, QtGui.QTableWidgetItem(str(np.round(MPVLst[x],6))))
+        MULst=[]
+        for x in range(0,NumRows,1):
+            MULst.append(np.float(self.ui.tableWidget_2.item(x,1).text()))
+            MPVLst.append(np.float(self.ui.tableWidget_2.item(x, 2).text()))
 
         coeffs=np.polyfit(MPVLst,MULst,1)
         polynomial=np.poly1d(coeffs)
@@ -579,7 +593,6 @@ class StartQT(QtWidgets.QMainWindow):
         self.CurR2 =np.corrcoef(MPVLst,MULst)[0,1]
         ys=polynomial(MPVLst)
         self.ui.CalibrationPlot.axes.plot(MPVLst,MULst,'o')
-        self.ui.CalibrationPlot.axes.hold(True)
         self.ui.CalibrationPlot.axes.plot(MPVLst,ys)
         self.ui.CalibrationPlot.axes.set_xlabel('Mean Pixel Value')
         self.ui.CalibrationPlot.axes.set_ylabel('Delivered MU')
@@ -588,11 +601,11 @@ class StartQT(QtWidgets.QMainWindow):
             string='-'
         else:
             string='+'
-        self.ui.CalibrationPlot.axes.set_title("MU="+str(np.round(coeffs[0],2))+"*MPV"+string+str(np.abs(np.round(coeffs[1],2))))
+        self.ui.CalibrationPlot.axes.set_title("MU="+str(np.round(coeffs[0],4))+"*MPV"+string+str(np.abs(np.round(coeffs[1],2))))
         self.ui.CalibrationPlot.draw()
         self.CurCalibIntercept=coeffs[1]
         self.CurCalibSlope=coeffs[0]
-        ds=dcm.read_file(CalibrationImages[0])
+        ds=dcm.read_file(self.CalibrationImagesLst[0])
         # kVP to MV conversion
         Energy = int(ds.ExposureSequence[0].data_element('KVP').value) / 1000
         self.CurDoseRate = ds.RTImageDescription.split(',')[1].split(('\r'))[0].split(' ')[1]  # MU/min
@@ -604,6 +617,7 @@ class StartQT(QtWidgets.QMainWindow):
             self.CurCalibEnergy = '18X'
         elif Energy == 6.0 and self.CurDoseRate == '1000':
             self.CurCalibEnergy = '6XSRS'
+        self.UpdateCalibration()
 
     def UpdateCalibration(self):
         if self.CurR2>0.98:
