@@ -15,6 +15,7 @@ from pylinac.flatsym import BeamImage
 import glob
 import datetime as dt
 
+//Testing git merge
 
 class StartQT(QtWidgets.QMainWindow):
     def __init__(self, parent=None):
