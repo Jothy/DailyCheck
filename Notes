@@ -20,3 +20,5 @@ pyinstaller --hidden-import=pylinac -F --windowed --upx-dir=D:\Dailycheck Start.
 
 
 pyinstaller --hidden-import=[pylinac] -F Start.py
+
+Qt library is being updated.
